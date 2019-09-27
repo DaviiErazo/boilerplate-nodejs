@@ -1,0 +1,72 @@
+{
+    "name": "hooly-boilerplate-nodejs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/server.ts",
+    "scripts": {
+        "test": "nyc --reporter=lcov --reporter=text-lcov mocha .ts mocha -r ts-node/register build/src/test",
+        "ts:node": "ts-node src/server.ts",
+        "clean": "rm -rf build",
+        "build": "tsc",
+        "start": "node build/src/server",
+        "dev": "nodemon",
+        "compile:run": "tsc && node build/src/server"
+    },
+    "jest": {
+        "verbose": true,
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@sentry/node": "^5.6.2",
+        "@types/chai-http": "^4.2.0",
+        "@types/compression": "^1.0.1",
+        "@types/cors": "^2.8.6",
+        "@types/helmet": "0.0.44",
+        "@types/node": "^12.7.2",
+        "@types/swagger-ui-express": "^3.0.1",
+        "axios": "^0.19.0",
+        "body-parser": "^1.19.0",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "dotenv": "^8.1.0",
+        "express": "^4.17.1",
+        "helmet": "^3.20.0",
+        "morgan": "^1.9.1",
+        "nock": "^10.0.6",
+        "swagger-ui-express": "^4.0.7"
+    },
+    "devDependencies": {
+        "@istanbuljs/nyc-config-typescript": "^0.1.3",
+        "@types/body-parser": "^1.17.1",
+        "@types/chai": "^4.2.0",
+        "@types/express": "github:types/express",
+        "@types/jest": "^24.0.18",
+        "@types/mocha": "^5.2.7",
+        "jest": "^24.9.0",
+        "mocha": "^6.2.0",
+        "nodemon": "^1.19.1",
+        "nyc": "^14.1.1",
+        "source-map-support": "^0.5.13",
+        "ts-jest": "^24.0.2",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.5.3"
+    },
+    "nyc": {
+        "include": "build/"
+    }
+}

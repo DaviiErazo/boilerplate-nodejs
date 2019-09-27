@@ -1,0 +1,32 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "",
+    "schemes": ["http"],
+    "produces": ["application/json"],
+    "paths": {
+        "/health": {
+            "get": {
+                "tags": ["health"],
+                "summary": "Check microservice status ",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Page not found"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                }
+            }
+        }
+    }
+}
